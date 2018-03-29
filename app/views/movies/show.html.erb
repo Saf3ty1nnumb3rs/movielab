@@ -1,0 +1,15 @@
+<marquee><h1><a href='/'>(+)</a><%= @movie.title %>!</h1></marquee>
+
+<h2><%= @movie.title %></h2>
+<%= image_tag @movie.picture %>
+<div>
+    <ul>
+        <li><%= @movie.genre%></li>
+        <li><%= @movie.year %></li>
+        <li><%= @movie.synopsis %></li>
+        
+    </ul>
+    <%= button_to "Edit Movie", "/movies/#{@movie.id}/edit" , :method => :get %>
+<%= button_to "Delete Movie", "/movies/#{@movie.id}" , :method => :delete %>
+<%= button_to "Movie List", '/' , :method => :get %>
+</div>

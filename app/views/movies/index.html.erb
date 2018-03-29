@@ -1,0 +1,22 @@
+<h1>Movies</h1>
+
+<%= button_to "New Movie", "/movies/new" , :method => :get %>
+
+<%= @movies.each do |movie| %>
+    <h1><%= movie.title %></h1>
+
+    <div>
+        <%= image_tag movie.picture %>
+    </div>
+    <div>
+        <ul>
+            
+            <li><%= movie.genre%></li>
+            <li><%= movie.year %></li>
+            <li><%= movie.synopsis %></li>
+            
+        </ul>
+        <%= button_to "Edit Movie", "/movies/#{movie.id}/edit" , :method => :get %>
+        <%= button_to "Delete #{movie.title}", "/movies/#{movie.id}" , :method => :delete %>
+    </div>
+<% end %>
